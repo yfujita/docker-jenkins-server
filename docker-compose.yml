@@ -6,7 +6,7 @@ services:
     volumes:
       - /mnt_docker/jenkins_home:/var/jenkins_home
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
     networks:
       - front
   nginx:
