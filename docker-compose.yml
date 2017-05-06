@@ -1,0 +1,18 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: ./nginx
+      args:
+        BASIC_USER: "admin"
+        BASIC_PASS: "admin"
+    ports:
+      - "80:80"
+    networks:
+      - front
+
+networks:
+  esnet:
+    driver: bridge
+  front:
+    driver: bridge
