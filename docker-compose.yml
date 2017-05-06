@@ -1,5 +1,14 @@
 version: '2'
 services:
+  jenkins:
+    build:
+      context: ./jenkins
+    volumes:
+      - /mnt_docker/jenkins_home:/var/jenkins_home
+    ports:
+      - "8080:8080"
+    networks:
+      - front
   nginx:
     build:
       context: ./nginx
@@ -10,7 +19,6 @@ services:
       - "80:80"
     networks:
       - front
-
 networks:
   esnet:
     driver: bridge
