@@ -19,8 +19,8 @@ services:
       - "80:80"
     networks:
       - front
+    depends_on:
+      - jenkins
 networks:
-  esnet:
-    driver: bridge
   front:
     driver: bridge
