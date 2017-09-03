@@ -19,6 +19,8 @@ services:
       - "80:80"
     networks:
       - front
+    volumes:
+      - /mnt_docker/nginx_html:/usr/share/nginx/html
     depends_on:
       - jenkins
 networks:
